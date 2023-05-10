@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  font-size: 16px;
+  height: 100vh;
+}
+
+body {
+  max-width: min(960px, 100% - 16px);
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 110px;
+}
+
+.header {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.description-container {
+  max-width: 440px;
+}
+
+.subheader {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.description {
+  font-size: 14px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 4rem;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.profile-card {
+  position: relative;
+}
+
+.profile-card > img {
+  height: auto;
+  width: 91%;
+}
+.profile-card > p {
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.profile-card::after {
+  content: attr(data-designation);
+  position: absolute;
+  top: 0;
+  right: 0;
+  writing-mode: vertical-lr;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 679px) {
+  header {
+    flex-direction: column;
+    padding-top: 71px;
+    gap: 38px;
+  }
+  .profile-card:nth-child(2n) {
+    transform: translateY(48px);
+  }
+  footer {
+    margin-top: 64px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .description {
+    font-size: 18px;
+  }
+  body {
+    max-width: min(960px, 100% - 36px);
+    margin: auto;
+  }
+  main {
+    grid-template-columns: repeat(3, 200px);
+    justify-content: space-between;
+  }
+
+  .profile-card {
+    margin-bottom: 132px;
+    position: relative;
+  }
+  .profile-card > img {
+    height: auto;
+    width: 88%;
+  }
+  .profile-card > p {
+    font-size: 18px;
+  }
+  .profile-card::after {
+    font-size: 12px;
+  }
+
+  .profile-card:nth-child(3n-1) {
+    transform: translateY(100px);
+  }
+}
+@media screen and (min-width: 880px) {
+  main {
+    grid-template-columns: repeat(3, 264px);
+    justify-content: space-between;
+  }
+  .profile-card > img {
+    max-height: 340px;
+    max-width: 240px;
+    width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #bdbdbd;
+  margin-top: 64px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+}
