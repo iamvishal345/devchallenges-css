@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://second-gun.surge.sh">
+    <a href="https://coordinated-mitten.surge.sh">
       Demo
     </a>
     <span> | </span>
