@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interior Consultant</title>
+    <link rel="icon" href="./devchallenges.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 class="brand">This Interior</h1>
+        <div class="ham-menu" id="menu-toggle">
+          <div class="icon-left"></div>
+          <div class="icon-right"></div>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item active"><a href="#home">Home</a></li>
+          <li class="nav-item"><a href="#collection">Collection</a></li>
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="desc-container">
+        <h1 class="heading">Modern Interior</h1>
+        <p class="description">
+          A full-Service residential & commercial interior design and staging
+          company offering professional organizing & eco-services.
+        </p>
+        <button class="read-more-cta">
+          Read More<svg
+            width="32"
+            height="18"
+            viewBox="0 0 63 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect y="10" width="54" height="6" rx="3" />
+            <path
+              d="M61.5399 11.2374C62.4465 12.034 62.4465 13.4459 61.5399 14.2424L49.32 24.9785C48.0277 26.1139 46 25.1962 46 23.476V2.00389C46 0.283669 48.0277 -0.633982 49.32 0.50141L61.5399 11.2374Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="img-container">
+        <div>
+          <img class="img-banner" src="./photo1.png" />
+        </div>
+        <div class="img-card">
+          <div class="img-card-intro">
+            <img src="./photo2.png" alt="Profile Photo" />
+            <div class="img-card-intro-data">
+              <p>Aliza Webber</p>
+              <p>Interior designer</p>
+            </div>
+          </div>
+          <p class="img-card-body">Designed in 2020 by Aliza Webber</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      created by
+      <a href="https://devchallenges.io/portfolio/iamvishal345" rel="noopener"
+        >iamvishal345</a
+      >
+      - devChallenges.io
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-toggle");
+      const menu = document.querySelector(".nav-list");
+      menuBtn.addEventListener("click", () => {
+        if (menuBtn.classList.contains("open")) {
+          menuBtn.classList.remove("open");
+          menu.classList.remove("show");
+        } else {
+          menuBtn.classList.add("open");
+          menu.classList.add("show");
+        }
+      });
+      menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.querySelector(".nav-item.active").classList.remove("active");
+        e.target.parentNode.classList.add("active");
+      });
+    </script>
+  </body>
+</html>
